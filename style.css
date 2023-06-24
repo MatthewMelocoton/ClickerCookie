@@ -265,8 +265,11 @@ body{
         margin-left: 40px;
     }
     #buton{
-        top: 280px;
-        left: 4%;
+        top: 0;
+        margin: 0;
+        left: 47%;
+        transform: rotate(90deg);
+        position: absolute;
     }
     #cursorimg{
         width: 60px;
