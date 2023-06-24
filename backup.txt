@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button id="mainbutton"></button>
+        <label id="counter">0</label>
+
+        <div class="shop">
+            <div class="titlecontainer">
+                <h1 class="title">Shop</h1>
+            </div>
+            <button id="cursorbutton">Cursor: 15cp</button>
+        </div>
+    </div>
+    
+</body>
+<script>
+    let count = 0;
+
+    document.getElementById("mainbutton").onclick = function(){
+        count = count + 1;
+        document.getElementById("counter").innerHTML = count;
+
+        if (count > 14){
+            document.getElementById("cursorbutton").style.display = "block";
+        }
+        else {
+            document.getElementById("cursorbutton").style.display = "none";
+        }
+    }
+
+    document.getElementById("cursorbutton").onclick = function(){
+        count = count - 15;
+        document.getElementById("counter").innerHTML = count;
+
+        setInterval(function(){
+            count = count + 1;
+            document.getElementById("counter").innerHTML = count;
+        }, 5000);
+    }
+</script>
+</html>

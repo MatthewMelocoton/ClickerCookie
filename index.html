@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="logo.png">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="bg.jpg" class="bg">
+    <div id="container">
+        <button id="mainbutton"></button>
+        <label id="counter">0</label>
+        <h1 id="cursorcount">Cursors :</h1>
+        <label id="cursors">0</label>
+        <h1 id="chefcount">AIChefs :</h1>
+        <label id="chefs">0</label>
+        <h1 id="minecount">Mines :</h1>
+        <label id="mines">0</label>
+
+        <div id="buton">
+            <img src="arrow.png" id="arrow">
+        </div>
+        <div id="shop">
+            <div id="titlecontainer">
+                <h1 id="title">Generator Shop</h1>
+            </div>
+            <div id="itemcontainer">
+                <button id="cursorbutton">Cursor: 15cp</button>
+                <img src="cursor.png" id="cursorimg">
+                <button id="pratbutton">AIChef: 300cp</button>
+                <img src="chef.png" id="chefimg">
+                <button id="minebutton">Mine: 1000cp</button>
+                <img src="mine.png" id="mineimg">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.title = "Clicker Cookie";
+        let count = 0;
+        let cursoramount = 0;
+        let chefamount = 0;
+        let mineamount = 0;
+    
+        document.getElementById("mainbutton").onclick = function(){
+            count = count + 1;
+            document.getElementById("counter").innerHTML = count;
+    
+            document.getElementById("mainbutton").style.width = "210px";
+    
+            if (count >= 15){
+                document.getElementById("cursorbutton").onclick = function(){
+                    if (count >= 15){
+                        count = count - 15;
+                        document.getElementById("counter").innerHTML = count;
+    
+                        setInterval(function(){
+                            count = count + 1;
+                            document.getElementById("counter").innerHTML = count;
+                        }, 5000);
+
+                        cursoramount = cursoramount + 1;
+                        document.getElementById("cursors").innerHTML = cursoramount;
+                    }
+                };
+            };
+    
+            if (count >= 300){
+                document.getElementById("pratbutton").onclick = function(){
+                    if (count >= 300){
+                        count = count - 300;
+                        document.getElementById("counter").innerHTML = count;
+    
+                        setInterval(function(){
+                            count = count + 1;
+                            document.getElementById("counter").innerHTML = count;
+                        }, 1000);
+
+                        chefamount = chefamount + 1;
+                        document.getElementById("chefs").innerHTML = chefamount;
+                    }
+                };
+            };
+
+            if (count >= 1000){
+                document.getElementById("minebutton").onclick = function(){
+                    if (count >= 1000){
+                        count = count - 1000;
+                        document.getElementById("counter").innerHTML = count;
+    
+                        setInterval(function(){
+                            count = count + 1;
+                            document.getElementById("counter").innerHTML = count;
+                        }, 100);
+
+                        mineamount = mineamount + 1;
+                        document.getElementById("mines").innerHTML = mineamount;
+                    }                    
+                };
+            };
+            setTimeout(anim, 75);
+    
+            function anim(){
+                document.getElementById("mainbutton").style.width = "200px";
+            };
+    
+            document.getElementById("abc").onclick = function(){
+                document.getElementById("container").style.backgroundColor = "red";
+            };
+        };
+        
+        let displaybar = document.getElementById("buton");
+        let isClicked = false;
+
+        displaybar.addEventListener("click", function(){
+            if(isClicked){
+                document.getElementById("shop").style.width = "";
+                document.getElementById("titlecontainer").style.width = "";
+                document.getElementById("itemcontainer").style.width = "";
+                document.getElementById("titlecontainer").style.opacity = "100%";
+                document.getElementById("itemcontainer").style.opacity = "100%";
+                document.getElementById("buton").style.right = "";
+                document.getElementById("chefimg").style.opacity = "100%";
+                document.getElementById("cursorimg").style.opacity = "100%";
+                document.getElementById("mineimg").style.opacity = "100%";
+                document.getElementById("pratbutton").style.opacity = "100%";
+                document.getElementById("cursorbutton").style.opacity = "100%";
+                document.getElementById("minebutton").style.opacity = "100%";
+                document.getElementById("title").style.opacity = "100%";
+                document.getElementById("arrow").style.transform = "rotate(0deg)";
+            }
+            else{
+                document.getElementById("shop").style.width = "20px";
+                document.getElementById("titlecontainer").style.width = "20px";
+                document.getElementById("itemcontainer").style.width = "20px";
+                document.getElementById("titlecontainer").style.opacity = "0%";
+                document.getElementById("itemcontainer").style.opacity = "0%";
+                document.getElementById("buton").style.right = "35px";
+                document.getElementById("buton").style.width = "25px";
+                document.getElementById("chefimg").style.opacity = "0%";
+                document.getElementById("mineimg").style.opacity = "0%";
+                document.getElementById("cursorimg").style.opacity = "0%";
+                document.getElementById("pratbutton").style.opacity = "0%";
+                document.getElementById("minebutton").style.opacity = "0%";
+                document.getElementById("cursorbutton").style.opacity = "0%";
+                document.getElementById("title").style.opacity = "0%";
+                document.getElementById("arrow").style.transform = "rotate(-180deg)";
+            }
+
+            isClicked = !isClicked;
+        });
+
+    </script>
+
+</body>
+
+</html>

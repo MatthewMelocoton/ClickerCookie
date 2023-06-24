@@ -1,0 +1,324 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow: hidden;
+}
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    filter: blur(3px);
+}
+#container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+#mainbutton{
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-image: url(javascript.png);
+    background-color: transparent;
+    border: 1px solid transparent;
+    background-size: cover;
+
+    animation-name: inupdo;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    transition: all;
+    animation-iteration-count: infinite;
+}
+@keyframes inupdo{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+#counter{
+    position: absolute;
+    top: 80px;
+    font-size: 60px;
+    font-family: permanent marker;
+    color: white;
+}
+#shop{
+    height: 100vh;
+    width: 300px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    margin-right: 20px;
+    transition-duration: 0.6s;
+}
+#titlecontainer{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-top: 25px;
+    transition-duration: 0.6s;
+}
+#title{
+    font-family: permanent marker;
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    transition-duration: 0.4s;
+}
+#itemcontainer{
+    width: 300px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 145px;
+    border-radius: 12px;
+    transition-duration: 0.6s;
+}
+#cursorbutton{
+    width: 150px;
+    height: 50px;
+    font-family: permanent marker;
+    font-weight: 400;
+    font-size: 20px;
+    position: absolute;
+    top: 175px;
+    margin-left: 25px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 5px;
+    color: white;
+    transition-duration: 0.4s;
+}
+#pratbutton{
+    width: 150px;
+    height: 50px;
+    font-family: permanent marker;
+    font-weight: 400;
+    font-size: 18px;
+    position: absolute;
+    top: 275px;
+    margin-left: 25px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 5px;
+    color: white;
+    transition-duration: 0.4s;
+}
+#minebutton{
+    width: 150px;
+    height: 50px;
+    font-family: permanent marker;
+    font-weight: 400;
+    font-size: 18px;
+    position: absolute;
+    top: 375px;
+    margin-left: 25px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 5px;
+    color: white;
+    transition-duration: 0.4s;
+}
+#cursorimg{
+    width: 40px;
+    height: 50px;
+    position: absolute;
+    right: 40px;
+    margin-top: 30px;
+
+    transition-duration: 0.4s;
+}
+#chefimg{
+    height: 60px;
+    width: 50px;
+    position: absolute;
+    right: 40px;
+    margin-top: 125px;
+
+    transition-duration: 0.4s;
+}
+#mineimg{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 40px;
+    margin-top: 230px;
+
+    transition-duration: 0.4s;
+}
+#buton{
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 120px;
+    width: 30px;
+    position: absolute;
+    border-radius: 5px;
+    right: 330px;
+    bottom: 35px;
+    transition-duration: 0.6s;
+    display: flex;
+    justify-content: center;
+}
+#arrow{
+    height: 120px;
+    width: 25px;
+    opacity: 50%;
+    transition-duration: 0.6s;
+}
+#cursorcount{
+    font-family: permanent marker;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+}
+#cursors{
+    font-family: permanent marker;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 22px;
+    left: 170px;
+}
+#chefcount{
+    font-family: permanent marker;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+#chefs{
+    font-family: permanent marker;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 72px;
+    left: 170px;
+}
+#minecount{
+    font-family: permanent marker;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+#mines{
+    font-family: permanent marker;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 122px;
+    left: 170px;
+}
+@media only all and (max-width: 550px){
+    #shop{
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        height: 560px;
+        bottom: 0px;
+    }
+    #title{
+        font-size: 45px;
+    }
+    #titlecontainer{
+        width: 100%;
+    }
+    #itemcontainer{
+        width: 100%;
+    }
+    #cursorbutton{
+        width: 250px;
+        height: 65px;
+        font-size: 30px;
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    #minebutton{
+        width: 250px;
+        height: 65px;
+        font-size: 30px;
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    #pratbutton{
+        width: 250px;
+        height: 65px;
+        font-size: 30px;
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    #buton{
+        top: 280px;
+        left: 4%;
+    }
+    #cursorimg{
+        width: 60px;
+        height: 75px;
+        top: 165px;
+        right: 80px;
+    }
+    #chefimg{
+        width: 60px;
+        height: 75px;
+        top: 165px;
+        right: 80px;
+    }
+    #mineimg{
+        width: 60px;
+        height: 75px;
+        top: 165px;
+        right: 80px;
+    }
+    #cursors{
+        font-size: 25px;
+    }
+    #cursorcount{
+        font-size: 25px;
+        top: 3px;
+    }
+    #chefs{
+        font-size: 25px;
+        top: 22px;
+        left: 400px;
+    }
+    #chefcount{
+        font-size: 25px;
+        left: 250px;
+        top: 3px;
+    }
+    #mines{
+        font-size: 25px;
+        top: 72px;
+    }
+    #minecount{
+        font-size: 25px;
+        top: 53px;
+    }
+    #mainbutton{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 220px;
+    }
+    #counter{
+        position: absolute;
+        top: 120px;
+    }
+}
